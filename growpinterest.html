@@ -32,7 +32,6 @@
       flex-direction: column;
       align-items: center;
       padding: 0;
-      min-height: 48px;
     }
     .nav-bar {
       display: flex;
@@ -221,18 +220,6 @@
       color: #b88a1a;
       margin-top: 48px;
     }
-    .calendar-iframe-wrapper {
-      max-width: 700px;
-      margin: 32px auto 0 auto;
-      padding: 0;
-    }
-    #scrollTopBtn {
-      /* already styled inline for fallback */
-    }
-    #scrollTopBtn:active, #scrollTopBtn:hover {
-      background: #ffe082;
-      color: #181818;
-    }
     @media (max-width: 1000px) {
       .video-container iframe, .video-container video { width: 100%; height: 340px; }
       .video-container { padding: 24px 0; }
@@ -244,22 +231,6 @@
       .screenshots img { width: 120px; height: 80px; }
       .pricing-table { padding: 18px 6px; }
       .review-card { padding: 18px 10px; }
-      .calendar-iframe-wrapper iframe {
-        height: 400px;
-        min-height: 320px;
-      }
-      .fixed-header {
-        padding: 0 0 2px 0;
-        min-height: 36px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.04);
-      }
-      .nav-bar {
-        padding: 0 0 6px 0;
-        margin-top: 2px;
-      }
-      body {
-        padding-top: 54px;
-      }
     }
   </style>
   <!-- Google AdSense -->
@@ -278,22 +249,6 @@
         });
       });
     });
-    // Scroll to Top Button logic
-    (function() {
-      var btn = document.getElementById('scrollTopBtn');
-      function checkScroll() {
-        if(window.innerWidth <= 700 && window.scrollY > 180) {
-          btn.style.display = 'block';
-        } else {
-          btn.style.display = 'none';
-        }
-      }
-      window.addEventListener('scroll', checkScroll);
-      window.addEventListener('resize', checkScroll);
-      btn.addEventListener('click', function() {
-        window.scrollTo({top:0, behavior:'smooth'});
-      });
-    })();
   </script>
 </head>
 <body>
@@ -417,13 +372,9 @@
         <!-- end Google Calendar Appointment Scheduling -->
       </div>
       <!-- Google Calendar Appointment Scheduling begin -->
-      <div class="calendar-iframe-wrapper">
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0oFW4AmTrrJ8BPrqlQiv50ONCtdYF4XxP_RX3piIOJ_bN8bo9l1FfeuzUFg0MP3t3ysoLAjIKs?gv=true" style="border: 1.5px solid #b88a1a; box-shadow: 0 4px 24px rgba(184,138,26,0.18); border-radius: 18px; background: #fff;" width="100%" height="600" frameborder="0"></iframe>
-      </div>
-      <!-- end Google Calendar Appointment Scheduling -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0oFW4AmTrrJ8BPrqlQiv50ONCtdYF4XxP_RX3piIOJ_bN8bo9l1FfeuzUFg0MP3t3ysoLAjIKs?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
     </section>
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" aria-label="Scroll to top" style="display:none;position:fixed;bottom:24px;right:18px;z-index:2000;background:#b88a1a;color:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 12px rgba(0,0,0,0.18);font-size:2rem;cursor:pointer;transition:background 0.2s;">↑</button>
   </main>
   <footer>
   </footer>
